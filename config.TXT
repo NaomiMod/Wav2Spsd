@@ -1,0 +1,8 @@
+#------------
+# spsd output:
+#------------
+# 1 = export SPSD version 1 format   (most common type)
+# 2 = export SPSD version 2 format   (Initial D3, Virtua Tennis2)
+# 3 = export both                    (on by default)
+
+spsd_output=3

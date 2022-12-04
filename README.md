@@ -1,5 +1,5 @@
 # WAV2SPSD v1.0
-By VincentNL 4/12/2022
+By VincentNL 2022/12/04
 
 
 This tool will convert stereo .wav files into Naomi/Naomi2 audio stream .SPSD

@@ -116,7 +116,7 @@ def spsd_header():
     bin.write_uint16_buff (n, freq)
     n.write (header_4)
 
-def wav2spsd_v1():
+def wav2spsd_v1():     # V1 is one of the mostly used spsd format
     global n, size
 
     fs, data = wavfile.read (filename)  # read wav file, split into 2 mono tracks
@@ -136,7 +136,7 @@ def wav2spsd_v1():
 
     ## SPSD conversion params
     size = len (r.read ()) + len (
-        l.read ())  # if Stereo, remove header of 0x800 stream data from left and right .STR files
+        l.read ())  # Remove header of 0x800 stream data from left and right .STR files
     data_shift = 0x2000
     l.seek (0x0)  # Start read from left channel
     r.seek (0x0)  # Start read from right channel
@@ -168,7 +168,7 @@ def wav2spsd_v1():
     os.remove (f'{filename[:-4]}_left.wav')
     os.remove (f'{filename[:-4]}_right.wav')
 
-def wav2spsd_v2():
+def wav2spsd_v2():     # V2 is used on newer Naomi / Naomi2 games, i.e. Virtua Tennis 2, Initial D3
     global n, size
 
     cmd = [fr'{os.getcwd ()}\tools\MkStream.exe', f'{filename}', f'{filename[:-4]}_v2.str', 'adpcm']
@@ -217,7 +217,7 @@ def wav2spsd_v2():
 
     ## .STR conversion params
     f.seek (0x0)
-    size = int ((len (f.read ()) - (0x800)))  # if Stereo
+    size = int ((len (f.read ()) - (0x800))) 
     f.seek (0x800)  # Start reading data
 
     spsd_header ()  # rebuild header

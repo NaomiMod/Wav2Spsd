@@ -1,10 +1,13 @@
 # WAV2SPSD v1.0
 By VincentNL 2022/12/04
 
+This program will convert your stereo .wav files [8000-11025-16000-22050-30000-32000-44100Hz] into Naomi .SPSD files.
 
-This tool will convert stereo .wav files into Naomi/Naomi2 audio stream .SPSD
+Please note, SPSD use 2 main format variations with different data layout/header.
 
-By replacing original .SPSD data with new tracks, you can customize your favourite arcade game songs!
+Most games use v1, but a number of new titles like InitalD3 (Naomi2) use v2.
+For this reason just decided to include both formats as output after conversion.
+(If you only need one type, just edit config.txt)
 
 # HOW TO INSTALL
 
